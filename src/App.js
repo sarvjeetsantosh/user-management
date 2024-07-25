@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Home from "./components/Home";
-import CreateUser from "./components/CreateUser";
+import Home from "./components/pages/Home";
+import CreateUser from "./components/pages/CreateUser";
 import MainLaout from "./components/MainLaout";
-import UpdateUser from "./components/UpdateUser";
+import UpdateUser from "./components/pages/UpdateUser";
 
 function App() {
   return (

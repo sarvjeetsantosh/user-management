@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 // import { userDataAction } from "../redux/action/UserAction";
-import { updateUser, getUserById } from "../services";
+import { updateUser, getUserById } from "../../services";
 import { useNavigate, useParams } from "react-router-dom";
 
 const UpdateUser = () => {
@@ -60,19 +60,21 @@ const UpdateUser = () => {
           className="flex flex-wrap items-center justify-around gap-5 p-10 ml-5 border rounded"
         >
           <input
-            name="firstName"
-            placeholder={"firstName"}
-            defaultValue={formData.firstName}
+            name="username"
+            placeholder={"username"}
+            defaultValue={formData.username}
             onChange={handleChange}
             className="w-[49%] p-2 rounded border"
           />
+
           <input
-            name="lastName"
-            placeholder={"lastName"}
-            value={formData.lastName}
+            name="password"
+            placeholder={"password"}
+            value={formData.password}
             onChange={handleChange}
             className="w-[49%] p-2 rounded border"
           />
+
           <input
             name="email"
             placeholder={"Email"}
@@ -80,25 +82,6 @@ const UpdateUser = () => {
             onChange={handleChange}
             className="w-[49%] p-2 rounded border"
           />
-          <input
-            name="age"
-            placeholder={"Age"}
-            value={formData.age}
-            onChange={handleChange}
-            className="w-[49%] p-2 rounded border"
-          />
-
-          <select
-            name="gender"
-            onChange={handleChange}
-            value={formData.gender}
-            className="w-[49%] p-2 rounded border"
-          >
-            <option value="">Select Gender</option>
-            <option value="female">female</option>
-            <option value="male">male</option>
-            <option value="other">other</option>
-          </select>
 
           <input
             type="submit"
