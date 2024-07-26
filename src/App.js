@@ -5,12 +5,14 @@ import Home from "./components/pages/Home";
 import CreateUser from "./components/pages/CreateUser";
 import MainLaout from "./components/MainLaout";
 import UpdateUser from "./components/pages/UpdateUser";
+import Login from "./components/pages/LogInRegister";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<MainLaout Component={<Home />} />} />
+        <Route exact path="/login" element={<Login />} />
         <Route
           path="/createuser"
           element={<MainLaout Component={<CreateUser />} />}

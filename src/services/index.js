@@ -21,3 +21,7 @@ export const getUserById = async (userId) => {
 export const updateUser = async (id, formData) => {
   return await axios.put(`${API_URL}/user/${id}`, formData);
 };
+
+export const login = async (formData) => {
+  return await axios.post(`${API_URL}/user/login`, formData);
+};

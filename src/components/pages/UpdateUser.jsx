@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
-// import { useSelector, useDispatch } from "react-redux";
-// import { userDataAction } from "../redux/action/UserAction";
 import { updateUser, getUserById } from "../../services";
 import { useNavigate, useParams } from "react-router-dom";
 
 const UpdateUser = () => {
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
   const { id } = useParams();
 
   const [user, setUser] = useState();
@@ -67,13 +64,13 @@ const UpdateUser = () => {
             className="w-[49%] p-2 rounded border"
           />
 
-          <input
+          {/* <input
             name="password"
             placeholder={"password"}
             value={formData.password}
             onChange={handleChange}
             className="w-[49%] p-2 rounded border"
-          />
+          /> */}
 
           <input
             name="email"

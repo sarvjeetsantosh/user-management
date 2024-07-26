@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { userDataAction } from "../../redux/action/UserAction";
 import { useNavigate } from "react-router-dom";
 import { createUser } from "../../services";
@@ -15,6 +15,8 @@ const CreateUserForm = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState(initialValue);
+
+  // const { loading, error } = useSelector((state) => state.auth);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

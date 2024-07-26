@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { userDataAction } from "../../redux/action/UserAction";
 import { FaEdit } from "react-icons/fa";
@@ -47,7 +47,7 @@ const Home = () => {
 
               <td className="w-60 border px-4 capitalize font-semibold"> {item.username} </td>
 
-              <td className="w-20 border px-2 text-center">{item.password}</td>
+              {/* <td className="w-20 border px-2 text-center">{item.password}</td> */}
 
               <td className="w-20 border px-4">{item.email}</td>
 
