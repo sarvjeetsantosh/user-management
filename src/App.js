@@ -13,10 +13,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<MainLaout Component={<Home />} />} />
         <Route exact path="/login" element={<Login />} />
-        <Route
-          path="/createuser"
-          element={<MainLaout Component={<CreateUser />} />}
-        />
+        <Route path="/createuser" element={<CreateUser />} />
         <Route
           path="/updateuser/:id"
           element={<MainLaout Component={<UpdateUser />} />}

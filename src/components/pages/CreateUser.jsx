@@ -33,7 +33,7 @@ const CreateUserForm = () => {
         console.log("created new data", data);
         userDataAction(dispatch);
         setFormData(initialValue);
-        navigate("/");
+        navigate("/login");
       })
       .catch((error) => {
         console.log("data not send!", error);
@@ -41,38 +41,41 @@ const CreateUserForm = () => {
   };
 
   return (
-    <div className="w-full h-[90vh] flex items-center justify-center">
-      <form
-        onSubmit={handleSubmit}
-        className="w-[500px] flex flex-wrap items-center justify-around gap-5 bg-black p-10 rounded-xl shadow-xl border"
-      >
-        <input
-          name="username"
-          placeholder={"username"}
-          value={formData.username}
-          onChange={handleChange}
-          className="w-full h-[50px] px-[20px] rounded-full"
-        />
-        <input
-          name="password"
-          placeholder={"password"}
-          value={formData.password}
-          onChange={handleChange}
-          className="w-full h-[50px] px-[20px] rounded-full"
-        />
-        <input
-          name="email"
-          placeholder={"Email"}
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full h-[50px] px-[20px] rounded-full"
-        />
+    <div className="w-full h-[100vh] bg-blue-700 flex items-center justify-center">
+      <div className="w-[500px] shadow bg-blue-800 rounded">
+        <h2 className="text-white text-3xl font-semibold mx-10 mt-5 mb-0">Register new account</h2>
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-wrap items-center justify-around gap-5 p-10"
+        >
+          <input
+            name="username" required
+            placeholder={"username"}
+            value={formData.username}
+            onChange={handleChange}
+            className="w-full h-[50px] px-[20px] rounded-full"
+          />
+          <input
+            name="password" required
+            placeholder={"password"}
+            value={formData.password}
+            onChange={handleChange}
+            className="w-full h-[50px] px-[20px] rounded-full"
+          />
+          <input
+            name="email" required
+            placeholder={"Email"}
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full h-[50px] px-[20px] rounded-full"
+          />
 
-        <input
-          type="submit"
-          className="w-full h-[50px] bg-yellow-400 cursor-pointer font-semibold px-[20px] rounded-full"
-        />
-      </form>
+          <input
+            type="submit"
+            className="w-full h-[50px] bg-yellow-400 cursor-pointer font-semibold px-[20px] rounded-full"
+          />
+        </form>
+      </div>
     </div>
   );
 };

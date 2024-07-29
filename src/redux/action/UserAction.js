@@ -4,6 +4,9 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  CLEAR_AUTH_ERROR,
+  SEND_PASSWORD_RESET_EMAIL,
+  RESET_PASSWORD,
   LOGOUT,
 } from "../constants/ActionType";
 import { getUsers, deleteUser as deleteUserService } from "../../services";
@@ -45,7 +48,10 @@ export const loginUser = (formData) => async (dispatch) => {
 
     dispatch({ type: LOGIN_SUCCESS, payload: user });
   } catch (error) {
-    dispatch({ type: LOGIN_FAILURE, payload: error.message });
+    dispatch({
+      type: LOGIN_FAILURE,
+      payload: error.message ? error.response.data.message : error.message,
+    });
   }
 };
 
@@ -54,3 +60,6 @@ export const logOutUser = () => (disptch) => {
   localStorage.removeItem("token");
   disptch({ type: LOGOUT });
 };
+
+// New action to clear authentication error
+export const clearAuthError = () => ({ type: CLEAR_AUTH_ERROR });

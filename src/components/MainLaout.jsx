@@ -8,23 +8,18 @@ const MainLaout = ({ Component }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { isAuthenticated } = useSelector((state) => state.auth);
-  console.log('check isAuthenticated: ', isAuthenticated);
+  const { isAuthenticated, error } = useSelector((state) => state.auth);
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
       dispatch({ type: 'LOGIN_SUCCESS', payload: user });
-    }
-  }, [dispatch]);
-
-  useEffect(() => {
-    if (!isAuthenticated) {
+    } else if (!isAuthenticated) {
       navigate('/login');
+    } else if (error) {
+      navigate('/createuser');
     }
-  }, [isAuthenticated, navigate]);
-
-
+  }, [dispatch, isAuthenticated, navigate, error]);
 
   return (
 

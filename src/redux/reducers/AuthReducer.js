@@ -2,6 +2,7 @@ import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
   LOGIN_FAILURE,
+  CLEAR_AUTH_ERROR,
   LOGOUT,
 } from "../constants/ActionType";
 
@@ -39,6 +40,11 @@ const authReducer = (status = initialStatus, action) => {
         ...status,
         isAuthenticated: false,
         user: null,
+      };
+    case CLEAR_AUTH_ERROR:
+      return {
+        ...status,
+        error: null,
       };
     default:
       return status;

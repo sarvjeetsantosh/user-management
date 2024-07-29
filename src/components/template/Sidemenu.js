@@ -15,13 +15,6 @@ const Sidemenu = () => {
         >
           Home
         </Link>
-
-        <Link
-          to={"/createuser"}
-          className="w-full my-2 bg-blue-500 text-white capitalize font-medium rounded px-4 py-2"
-        >
-          Create User
-        </Link>
       </div>
     </div>
   );
